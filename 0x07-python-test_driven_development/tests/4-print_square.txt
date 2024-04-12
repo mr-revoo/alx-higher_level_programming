@@ -1,0 +1,50 @@
+===============================================================================
+# module 4-print_square.py
+===============================================================================
+# doctest for function print_square
+===============================================================================
+# import function print_square
+>>> print_square = __import__('4-print_square').print_square
+
+===============================================================================
+# normal call
+===============================================================================
+>>> print_square(0)
+
+>>> print_square(2)
+##
+##
+
+>>> print_square(3)
+###
+###
+###
+
+===============================================================================
+# call with negative number
+===============================================================================
+>>> print_square(-1)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+===============================================================================
+# call with non integer
+===============================================================================
+>>> print_square(1.2)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square(-1.2)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+===============================================================================
+# missing arguments
+===============================================================================
+>>> print_square()
+Traceback (most recent call last):
+  ...
+TypeError: print_square() missing 1 required positional argument: 'size'

@@ -1,0 +1,71 @@
+===============================================================================
+# module 2-matrix_divided.py
+===============================================================================
+# doctest for function matrix_divided
+===============================================================================
+# import function matrix_divided
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+===============================================================================
+# normal call
+===============================================================================
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+===============================================================================
+# call with non matrix
+===============================================================================
+>>> matrix_divided("[[1, 2, 3], [4, 5, 6]]", 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(["[1, 2, 3]", [4, 5, 6]], 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([["1", 2, 3], [4, 5, 6]], 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+===============================================================================
+# non equal rows
+===============================================================================
+>>> matrix_divided([[1, 2, 3], [4, 5, 6, 7]], 0)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+===============================================================================
+# division by zero
+===============================================================================
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+===============================================================================
+# non int divisor
+===============================================================================
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "3")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+===============================================================================
+# missing one argument
+===============================================================================
+>>> print(matrix_divided([[1, 2], [3, 4]]))
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+===============================================================================
+# missing two argument
+===============================================================================
+>>> print(matrix_divided())
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

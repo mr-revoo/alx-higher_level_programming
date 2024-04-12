@@ -1,0 +1,41 @@
+===============================================================================
+# module 5-text_indentation.py
+===============================================================================
+# doctest for function text_indentation
+===============================================================================
+# import function text_indentation
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+===============================================================================
+# normal call
+===============================================================================
+>>> text_indentation("Hello. How are you?")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
+
+===============================================================================
+# call with non string
+===============================================================================
+>>> text_indentation(1)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+===============================================================================
+# missing argument
+===============================================================================
+>>> text_indentation()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
